@@ -1,0 +1,52 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMESAHAAB</title>
+    <link rel = "stylesheet" type = "text/css" href="{%static 'style.css' %}" />
+</head>
+<body bgcolor="grey">
+
+    <div id="container">
+        <div id="header">
+            <h1>MEMESAHAAB</h1>
+
+        </div>
+        <div id = "content">
+            <div id = "nav">
+                <h3>NAVIGATION</h3>
+                <ul>
+                    <li><a href="">HOMEPAGE</a></li>
+                    <li><a href="AboutUs.html">ABOUT US</a></li>
+                    <li><a href="Contact.html">CONTACT</li>
+                    <li><a href="accounts/register">REGISTER</a></li>
+                </ul>
+
+            </div>
+            <div id = "main">
+                <h2>HOME PAGE</h2>
+                <p>Images will be displayed here.</p>
+                <p>The home page will have 6 images displayed at a time.</p>
+                
+                <img src="{%static 'loss1.jpg' %}" alt = "Loss meme" >
+                <p><b>Name = {{name}} </b><br>
+                    Description : {{desc}} <br>
+                    Likes : {{likes}} <br>
+                    
+
+                </p>
+
+
+            </div>
+        </div>
+        <div id = "footer">
+            Copyright &copy; 2020 Anushree Sabnis, Team ZAPS
+
+        </div>
+    </div>
+
+</body>
+</html>

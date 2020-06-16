@@ -1,0 +1,41 @@
+body{
+    background-color: silver;
+}
+
+#container{
+    background-color: rgb(238, 255, 250);
+    width:800px;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+#header{
+    background-color: #66CCFF;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+#main{
+    background-color: navajowhite;
+    color: black;
+    padding:10px;
+    width: 580px;
+    float:right;
+    
+}
+#nav{
+    background-color: salmon;
+    color: black;
+    width:180px;
+    float:left;
+    padding:10px;
+
+}
+
+#footer{
+    clear:both;
+    background-color: lightsteelblue;
+    padding:10px;
+    color: slateblue;
+}

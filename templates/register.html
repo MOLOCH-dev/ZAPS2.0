@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+</head>
+<body>
+    <form action = "register" method="post">
+        {%csrf_token%}
+        Enter your First name : <input type = "text" name = "first_name" placeholder = "First name"><br>
+        Enter your Last name : <input type = "text" name = "last_name" placeholder = "Last name"><br>
+        Enter your username : <input type = "text" name = "username" placeholder = "User name"><br>
+        Enter your email address : <input type = "email" name = "email" placeholder = "Email id"><br>
+        Enter your password : <input type = "password" name = "password1" placeholder = "Password"><br>
+        Confirm your password : <input type = "password" name = "password2" placeholder = "Confirm Password"><br>
+        <input type = "submit">
+        
+
+    </form>
+
+    <div>
+        {%for message in messages%}
+
+        <h3>
+            {{message}}
+        </h3>
+        {%endfor%}
+    </div>
+
+
+    
+</body>
+</html>
