@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+{%load static%}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATEGORY 1</title>
+    <link rel="stylesheet" type="text/css" href="static\loss_style.css">
+
+   <!---- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    -->
+</head>
+<body>
+    <!-- TOP NAVIGATION WITH CATEGORY DROPDOWN-->
+    <div class = "navbar">
+        <a href = "Home1" class = "home"><i class="fa fa-home"></i>HOME</a>
+        <a href = "AboutUs.html"><i class = "fa fa-globe"></i>ABOUT US</a>
+        {%if user.is_authenticated %}
+        <a href = "accounts/logout"><i class = "fa fa-sign-out"></i>LOGOUT</a>
+        <a>Hello, {{user.username}}</a>
+        {%else%}
+        <a href= "accounts/login"><i class = "fa fa-sign-in"></i>LOGIN</a>
+        <a href = "accounts/register"><i class = "fa fa-unlock"></i>REGISTER</a>
+        {%endif%}
+
+        <a class = "button" onclick = "DarkMode();"><i class = "fa fa-lightbulb-o">DARK MODE</i></a>
+        <div class = "dropdown">
+            <button class="dropbtn"><i class = "fa fa-book"></i>Categories
+                <i class = "fa fa-caret-down"></i>
+            </button>
+            <div class = "dropdown-content">
+                <a href="MemeMan1.html">MEME MAN</a>
+                <a href="Surreal1.html">SURREAL</a>
+                <a href="Loss1.html">LOSS</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCORDION STYLE MAIN PAGE-->
+    <button class="accordion">LOSS MEMES</button>
+    <div class = "panel">
+        <!--IMAGES USED TO OPEN THE LIGHTBOX OF MEMES-->
+        <div class = "row">
+           
+            {%for Cgloss_meme in Cgloss_memes %}
+           
+            <div class = "column">
+                {% if Cgloss_meme.loss_meme %}
+                <p class = 'text-muted'>{{Cgloss_meme.title}}</p>
+                <img src ="{{Cgloss_meme.loss_meme.url}}", alt = "{{Cgloss_meme.title}}" onclick = "openModal();currentSlide(1)" class = "hover-shadow">
+                <p class = 'text-muted'>Author : {{Cgloss_meme.author}}</p>
+                <p class = 'text-muted'>{{Cgloss_meme.caption}}</p>
+                
+                {% else %}
+                <span class = "text-muted">Rickrolled</span>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+
+
+        <!-- THE LIGHTBOX-->
+        <div id= "myModal" class = "modal">
+            <span class ="close cursor" onclick = "closeModal()">&times;</span>
+            <div class = "modal-content">
+                {% for Cgloss_meme in Cgloss_memes %}
+                <div class = "mySlides">
+                    {%if Cgloss_meme.loss_meme %}
+                    <img src="{{Cgloss_meme.loss_meme.url}}" style="width: 100%;">
+                    
+                    <button  id = "number" class = "fa fa-thumbs-o-up" onclick = "CountLike();">Like</button>
+                    <button id = "number1" class = "fa fa-thumbs-o-down" onclick = "CountDislike();">Dislike</button>
+                    {% endif %}
+                
+                </div>
+                {% endfor %}
+                
+                <a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+                <a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+
+                <!-- CAPTION CONTROLS-->
+                <div class = "caption-container">
+                    <p id = "caption">Hello</p>
+                </div>
+                {% for Cgloss_meme in Cgloss_memes %}
+
+                <!-- THUMBNAIL CONTROLS-->
+
+                <div class = "column">
+                    {%if Cgloss_meme.loss_meme %}
+                    <img class = "demo" src = "{{Cgloss_meme.loss_meme.url}}" onclick = "currentSlide(1)" alt = "Loading">
+                    {% endif %}
+                </div>
+                {% endfor %}
+               
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+    <button class="accordion">COMMENTS</button>
+    <div class = "panel">
+        <div id = "comment">
+            <a href = "uploaded.html"><p style = "color:black; margin-left:30%;"><i class= "fa fa-comments"></i>Contribute to the chat!</p></a>
+
+           
+            
+            <div class="chatbox">
+                {%for Cgloss_meme in Cgloss_memes %}
+                <table>
+                    
+                        
+                        {% if Cgloss_meme.loss_meme_comments %}
+                        <th><i class= "fa fa-user-o"></i></th>
+                        <td>{{Cgloss_meme.author}} - {{Cgloss_meme.loss_meme_comments}}</td>
+                        
+                        {%endif%}
+                        
+                    
+
+                </table>
+            
+                {% endfor %}
+            </div>
+
+
+           
+        </div>
+    </div>
+
+    <button class="accordion"> POST THINE MEMES, SAHAAB!</button>
+    <div class = "panel">
+        <div id = "memes-post">
+            
+            
+           
+            <a href = "uploaded.html"><p style = "color:black; margin-left:40%;"><i class= "fa fa-paper-plane"></i>Upload here</p></a>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+
+        
+    </script>
+
+    <script>
+        // Open the Modal
+        function openModal() {
+          document.getElementById("myModal").style.display = "block";
+        }
+        
+        // Close the Modal
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+
+    <script type = "text/javascript">
+        var Lcounter = 0;
+        var Dcounter = 0;
+        $("#number").html(Lcounter);
+        function CountLike(){
+            Lcounter = Lcounter +1;
+            $("#number").html(Lcounter);
+        };
+        $("#number1").html(Dcounter);
+        function CountDislike(){
+            Dcounter = Dcounter+1;
+            $("#number1").html(Dcounter);
+        }
+
+    </script>
+
+    <script type-"text/javascript">
+        bod = document.body
+        function DarkMode(){
+            bod.classList.toggle("dark-mode");
+
+        }
+        
+    </script>
+
+</body>
+
+
+</html>
+
+
+    

@@ -1,43 +1,10 @@
-<!CHANGE FONT>
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MemeSaahab</title>
-    <link rel="stylesheet" href="{% static 'Homepage Style.css' %}">
-</head>
-<body  style="color:goldenrod;">
+{%extends 'base.html'%}
 
-    <div id="container">
-        <div id="header">
-            <h1 style="text-align:center;"><a href="templates\Homepage.html" style="color: goldenrod;text-decoration: none;"> MemeSaahab </a></h1>
+<!--{%block link%}
+<link rel = "stylesheet" type= "text/css" href = "static\Homepage Style.css">{%endblock%}
+-->
 
-        </div>
-        <div id = "content">
-            <div id = "nav">
-                <br>
-                <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Navigation</h3>
-                <ul>
-                    <a href="index.html" style="text-decoration:none;color:#E1D222"> <li> Home</li></a>
-                    <br>
-                    {%if user.is_authenticated %}
-                    <a href="accounts/logout" style="text-decoration:none;color:#E1D222"> <li> Logout</li>
-                    <br>
-                    <li>Hello, {{user.username}}</li>
-                    {%else%}
-                    <a href="accounts/register" style="text-decoration:none;color:#E1D222"> <li> Join MemeSaahab! </li>
-                    <br>
-                    <a href="accounts/login" style="text-decoration:none;color:#E1D222"> <li> Login to MemeSaahab! </li>
-                    <br>
-                    {%endif%}
-                    <a href="AboutUs.html" style="text-decoration:none;color:#E1D222"> <li> About Us </li> </a>
-                    <br>
-                    <a href="Contact.html" style="text-decoration:none;color:#E1D222"> <li> Contact </li> </a>
-                     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br>
-                </ul>   
-                </div>
+{%block content%}
 
                 <div id = "main" >            
                     <h2 style="text-align: center;"> Bienvenue!</h2>
@@ -53,6 +20,6 @@
 
         </div>
     </div>
-
+{%endblock%}
 </body>
 </html>

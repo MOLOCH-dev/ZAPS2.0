@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" type="text/css" href="static\Home1stylenew.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- TOP NAVIGATION WITH CATEGORY DROPDOWN-->
+    <div class = "navbar">
+        <a href = "Home.html" class = "home"><i class="fa fa-home"></i>Home</a>
+        <a href = "AboutUs.html"><i class = "fa fa-globe"></i>About Us</a>
+        <div class = "dropdown">
+            <button class="dropbtn"><i class = "fa fa-book"></i>Categories
+                <i class = "fa fa-caret-down"></i>
+            </button>
+            <div class = "dropdown-content">
+                <a href="Meme Man.html">Meme Man</a>
+                <a href="Loss1.html">Loss</a>
+                <a href="Surreal.html">Surreal</a>
+            </div></b>
+        </div>
+        {%if user.is_authenticated %}
+        <a href = "accounts/logout"><i class = "fa fa-sign-out"></i>Login</a>
+        <a><i class = "fa fa-user-circle-o"></i>Hello,{{user.username}}</a>
+        {%else%}
+        <a href= "accounts/login"><i class = "fa fa-sign-in"></i>Logout</a>
+        <a href = "accounts/register"><i class = "fa fa-unlock"></i>Register</a>
+        {%endif%}
+        </div>
+    </div>
+   
+    <h1 class = "glow">MEMESAHAAB</h1>
+    <div class = "container">
+        
+        <div class = "Loss">
+            <a href = "Loss1.html"><img src = "{%static 'losshp.png' %}" class ="imglinks"></a>
+            <a href = "Surreal1.html"><img src = "{%static 'surrealhp2.jpg' %}" class ="imglinks"></a>
+
+            <a href = "MemeMan1.html"><img src = "{%static 'mememanhp.jpg' %}" class ="imglinks"></a>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
+

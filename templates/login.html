@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'Login style.css' %}" />
 </head>
 <body>
-    <form action="login" method = "POST">
-        {%csrf_token%}
-        Enter your username : <input type = "text" name = "username" placeholder = "User name"><br>
-        Enter your password : <input type = "password" name = "password" placeholder = "Password"><br>
-        <input type = "submit">
+    <div id = "header">
+        <h1><a href = ""></a>MEMESAHAAB</h1>
+    </div>
+
+    <div id = "content">
+        <div id = "navg">
+            <h3>NAVIGATION</h3>
+            <ul>
+                <li>
+                    <a href="">HOMEPAGE</a>
+                    
+                </li><br>
+                <li><b><a href = "AboutUs.html">ABOUT US</a></b></li><br>
+
+                <li><a href = "Contact.html">CONTACT US</a></li><br>
+                <li><a href = "register">REGISTER</a></li>
+
+
+            </ul>
+        </div>
+        <div id = "main">
+
+        
+            <h3>LOGIN FORM</h3>
+    
+            <form action="login" method = "POST">
+                {%csrf_token%}
+                Enter your username : <input type = "text" name = "username" placeholder = "User name"><br>
+                Enter your password : <input type = "password" name = "password" placeholder = "Password"><br>
+                <input type = "submit">
  
-    </form>
+            </form>
+            
+        </div>
+        <br>
+        <br>
+    </div>
+    <div id = "footer">
+        Copyright &copy; 2020, Team Zaps
+    </div>
+    
+
+
     
 </body>
 </html>

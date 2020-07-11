@@ -6,17 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMESAHAAB</title>
-    <link rel = "stylesheet" type = "text/css" href="{%static 'style.css' %}" />
+    <link rel = "stylesheet" type = "text/css" href="{%static 'index style.css' %}" />
 </head>
 <body bgcolor="grey">
 
-    <div id="container">
+    <div id="content">
         <div id="header">
             <h1>MEMESAHAAB</h1>
 
         </div>
         <div id = "content">
-            <div id = "nav">
+            <div id = "navg">
                 <h3>NAVIGATION</h3>
                 <ul>
                     <li><a href="">HOMEPAGE</a></li>
@@ -27,17 +27,49 @@
 
             </div>
             <div id = "main">
+                {%csrf_token%}
+                
                 <h2>HOME PAGE</h2>
                 <p>Images will be displayed here.</p>
                 <p>The home page will have 6 images displayed at a time.</p>
-                
-                <img src="{%static 'loss1.jpg' %}" alt = "Loss meme" >
-                <p><b>Name = {{name}} </b><br>
-                    Description : {{desc}} <br>
-                    Likes : {{likes}} <br>
+                <div class = "row" >
+                    
+                    
+                    {%for meme in memes%}
+                    <div class = 'ui segment'>
+
+
+                        <div class = "column">
+                            <img src="{{meme.img.url}}" alt = "a" height = "280" style = "width: 100%" >
+                            <p><b>Desc : {{meme.desc}}</b></p>
+                            <p>Name : {{meme.title}</p>
+                            <form action = "{% url 'memesahaab:like-post' %}" method = "POST" class = "ui form">
+                                {%csrf_token%}
+                                <input type = 'hidden' name = 'meme_id' value = {{meme.id}}>
+                                {%if user not in meme.liked.all %}
+                                <button class = "ui button positive" type = "submit">Like</button> 
+                                {%else %}
+                                <button class = "ui button negative" type = "submit">Unlike</button>
+                                {%endif%}
+                                <strong>{{meme.liked.all.count}}Likes</strong>
+
+                            </form>
+                            
+                        </div>
+                        
+                    </div>
+                    {% endfor %}
                     
 
-                </p>
+                    
+                </div>
+
+
+
+            
+                    
+
+                
 
 
             </div>

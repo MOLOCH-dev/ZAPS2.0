@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = 'stylesheet' href = 'static\uploaded_style.css' type = 'text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+</head>
+<body>
+    <div class = "navbar">
+        <a href = "Home1" class = "home"><i class="fa fa-home"></i>HOME</a>
+        <a href = "AboutUs.html"><i class = "fa fa-globe"></i>ABOUT US</a>
+        {%if user.is_authenticated %}
+        <a href = "accounts/logout"><i class = "fa fa-sign-out"></i>LOGOUT</a>
+        <a>Hello, {{user.username}}</a>
+        {%else%}
+        <a href= "accounts/login"><i class = "fa fa-sign-in"></i>LOGIN</a>
+        <a href = "accounts/register"><i class = "fa fa-unlock"></i>REGISTER</a>
+        {%endif%}
+
+        <a class = "button" onclick = "DarkMode();"><i class = "fa fa-lightbulb-o">DARK MODE</i></a>
+        <div class = "dropdown">
+            <button class="dropbtn"><i class = "fa fa-book"></i>Categories
+                <i class = "fa fa-caret-down"></i>
+            </button>
+            <div class = "dropdown-content">
+                <a href="MemeMan1.html">MEME MAN</a>
+                <a href="Surreal1.html">SURREAL</a>
+                <a href="Loss1.html">LOSS</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="openForm('form1')">Loss</button>
+        <button class="w3-bar-item w3-button" onclick="openForm('form2')">MemeMan</button>
+        <button class="w3-bar-item w3-button" onclick="openForm('form3')">Surreal</button>
+        <button class="w3-bar-item w3-button" onclick="openForm('form4')">Loss Chatbox</button>
+        <button class="w3-bar-item w3-button" onclick="openForm('form5')">MemeMan Chatbox</button>
+        <button class="w3-bar-item w3-button" onclick="openForm('form6')">Surreal Chatbox</button>
+
+
+
+    </div>
+
+    <div id = "container">
+
+        
+        <div id="form1" class="forms">
+            <form method = "POST" enctype ="multipart/form-data">
+                {%csrf_token%}
+                {% if form1 %}
+                <div class = "formdisplay">
+                    <p>SUBMIT LOSS MEMES HERE</p>
+                    {{ form1.title|as_crispy_field }}
+                    {{form1.author|as_crispy_field}}
+                    {{form1.caption|as_crispy_field}}
+                    
+                    <i class= "fa fa-paper-plane"></i>
+                    <button type="submit" class ="meme-input">
+                    {{form1.loss_meme}}</button>
+                    
+
+                </div>
+                
+                
+
+                <button type = "submit" class = "submit-button"><i class = "fa fa-hand-o-right"></i>Submit Meme</button>
+                {% endif %}
+                &nbsp;
+            </form>
+        </div>
+
+        <div id="form2" class="forms" style="display:none">
+            <form method = "POST" enctype ="multipart/form-data">
+                {%csrf_token%}
+                {% if form2 %}
+                <div class = "formdisplay">
+                    <p>SUBMIT MEMEMAN MEMES HERE</p>
+                    {{ form2.title|as_crispy_field }}
+                    {{form2.author|as_crispy_field}}
+                    <a style = "border-radius: 8px;">{{form2.caption|as_crispy_field}}</a>
+                    <i class= "fa fa-paper-plane"></i>
+                    <button type="submit" class ="meme-input">{{form2.mememan_meme}}</button>
+
+                </div>
+                
+                
+
+                <button type = "submit" class = "submit-button"><i class = "fa fa-hand-o-right"></i>Submit Meme</button>{% endif %}
+                &nbsp;
+                
+            </form>
+        
+        </div>
+
+        <div id="form3" class="forms" style="display:none">
+            <form method = "POST" enctype ="multipart/form-data">
+                {%csrf_token%}
+                {% if form3 %}
+                <div class = "formdisplay">
+                    <p>SUBMIT SURREAL MEMES HERE</p>
+                    {{ form3.title|as_crispy_field }}
+                    {{form3.author|as_crispy_field}}
+                    <a style = "border-radius: 8px;">{{form3.caption|as_crispy_field}}</a>
+                    <i class= "fa fa-paper-plane"></i>
+                    <button type="submit" class ="meme-input">{{form3.surreal_meme}}</button>
+
+                </div>
+                
+                
+
+                <button type = "submit" class = "submit-button"><i class = "fa fa-hand-o-right"></i>Submit Meme</button>                
+                &nbsp;
+                {% endif %}
+            </form>
+        
+        </div>
+
+        <div id="form4" class="forms" style="display:none">
+            <form method = "POST" enctype ="multipart/form-data">
+                {%csrf_token%}
+                {% if form1 %}
+                <div class = "formdisplay">
+                    {{ form1.author|as_crispy_field}}
+                    {{ form1.loss_meme_comments|as_crispy_field }}
+                    
+
+                </div>
+                
+                
+
+                <button type = "submit" class = "submit-button"><i class = "fa fa-hand-o-right"></i>Submit Comment</button>
+                {% endif %}
+                &nbsp;
+            </form>
+        </div>
+
+        <div id="form5" class="forms" style="display:none">
+            <form method = "POST" enctype ="multipart/form-data">
+                {%csrf_token%}
+                {% if form2 %}
+                <div class = "formdisplay">
+                    {{form2.author|as_crispy_field}}
+                    {{ form2.mememan_meme_comments|as_crispy_field }}
+                    
+
+                </div>
+                
+                
+
+                <button type = "submit" class = "submit-button"><i class = "fa fa-hand-o-right"></i>Submit Comment</button>
+                {% endif %}
+                &nbsp;
+            </form>
+        </div>
+
+        <div id="form6" class="forms" style="display:none">
+            <form method = "POST" enctype ="multipart/form-data">
+                {%csrf_token%}
+                {% if form3 %}
+                <div class = "formdisplay">
+                    {{form3.author|as_crispy_field}}
+                    {{form3.surreal_meme_comments|as_crispy_field}}
+                        
+    
+                </div>
+                    
+                    
+    
+                <button type = "submit" class = "submit-button"><i class = "fa fa-hand-o-right"></i>Submit Comment</button>
+                {% endif %}
+                &nbsp;
+            </form>
+        </div>
+    
+
+        
+    </div>
+
+      <script>
+        function openForm(formName) {
+          var i;
+          var x = document.getElementsByClassName("forms");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          document.getElementById(formName).style.display = "block";  
+        }
+        </script>
+
+        <script type-"text/javascript">
+            bod = document.body
+            function DarkMode(){
+                bod.classList.toggle("dark-mode");
+    
+            }
+            
+        </script>
+        
+        
+</body>
+</html>

@@ -1,0 +1,85 @@
+body{
+    
+    background-image: url("rainbow.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+    height:100%;
+
+
+    
+
+}
+
+#content{
+    
+    
+    width : 1000px;
+    height : 600px;
+    margin-left:auto;
+    margin-right:auto;
+    background-image: url("topthing.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+}
+
+#header{
+    
+    color: cornflowerblue;
+    background-color: rgb(2, 26, 51);
+    padding: 10px;
+    text-align: center;
+    width: 980px;
+    margin-left:auto;
+    margin-right:auto;
+    opacity:0.9;
+}
+
+#main{
+    background-image: url("moustache.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: visible;
+
+    color: rgba(245, 245, 245, 0.726);
+    padding:10px;
+    width:620px;
+    float: right;
+    height : 320px;
+    vertical-align: top;
+    margin-bottom: 10px;
+    margin-top: 220px;
+
+}
+
+
+#navg{
+    
+    color: cornflowerblue;
+    background-image: url("cats.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    backface-visibility: visible;
+    text-align: center;
+    padding: 10px;
+    width : 280px;
+    float : left;
+    margin-top: 50px;
+    height : 400px;
+
+}
+
+
+
+#footer{
+    background-color : gray;
+    color: cornflowerblue;
+    text-align: center;
+    padding: 10px;
+    clear:both;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity:0.9;
+}

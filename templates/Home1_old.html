@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="static\Home Style 2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- TOP NAVIGATION WITH CATEGORY DROPDOWN-->
+    <div class = "navbar">
+        <a href = "Home.html" class = "home"><i class="fa fa-home"></i>Home</a>
+        <a href = "AboutUs.html"><i class = "fa fa-globe"></i>About Us</a>
+        <div class = "dropdown">
+            <button class="dropbtn"><i class = "fa fa-book"></i>Categories
+                <i class = "fa fa-caret-down"></i>
+            </button>
+            <div class = "dropdown-content">
+                <a href = "Catg.html">Catg</a>
+                <a href="Meme Man.html">Meme Man</a>
+                <a href="Loss1.html">Loss</a>
+                <a href="Surreal.html">Surreal</a>
+            </div></b>
+        </div>
+        <a href = "Register.html"><i class = "fa fa-unlock"></i>Register</a>
+        <a href = "Login.html"><i class = "fa fa-sign-in"></i>Login</a>     
+        <a href = "LogOut.html"><i class = "fa fa-sign-out"></i>Logout</a>
+        </div>
+    </div>
+
+    <!-- ACCORDION STYLE MAIN PAGE (Meme Man)-->
+    <button class="accordion">Meme Man</button>
+    <div class = "panel">
+        <!--IMAGES USED TO OPEN THE LIGHTBOX OF MEMES-->
+        <div class = "row">
+            <div class="column">
+                <img src = "..\Meme Man\1.jpg" onclick = "openModal();currentSlide(1)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Meme Man\2.jpg" onclick = "openModal();currentSlide(2)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Meme Man\3.jpg" onclick = "openModal();currentSlide(3)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Meme Man\4.jpg" onclick = "openModal();currentSlide(4)" class = "hover-shadow">
+            </div>
+        </div>
+
+        <!-- THE LIGHTBOX-->
+        <div id= "myModal" class = "modal">
+            <span class ="close cursor" onclick = "closeModal()">&times;</span>
+            <div class = "modal-content">
+                <div class = "mySlides">
+                    <div class = "numbertext">1/4</div>
+                    <img src = "..\Meme Man\1.jpg" style="height: 80%;align-items: center;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">2/4</div>
+                    <img src = "..\Meme Man\2.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">3/4</div>
+                    <img src = "..\Meme Man\3.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">4/4</div>
+                    <img src = "..\Meme Man\4.jpg" style="height: 80%;">
+                </div>
+                
+
+                <!-- NEXT/PREVIOUS CONTROLS-->
+
+                <a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+                <a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+
+                <!-- CAPTION CONTROLS-->
+                <div class = "caption-container">
+                    <p id = "caption">Hello</p>
+                </div>
+
+                <!-- THUMBNAIL CONTROLS-->
+
+                <div class = "column">
+                    <img class = "demo" src = "..\Meme Man\1.jpg" onclick = "currentSlide(1)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Meme Man\2.jpg" onclick = "currentSlide(2)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Meme Man\3.jpg" onclick = "currentSlide(3)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Meme Man\4.jpg" onclick = "currentSlide(4)" alt = "Loading">
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <!-- ACCORDION STYLE MAIN PAGE (Loss)-->
+    <button class="accordion">Loss</button>
+    <div class = "panel">
+        <!--IMAGES USED TO OPEN THE LIGHTBOX OF MEMES-->
+        <div class = "row">
+            <div class="column">
+                <img src = "..\Loss\1.jpg" onclick = "openModal();currentSlide(1)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Loss\2.jpg" onclick = "openModal();currentSlide(2)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Loss\3.jpg" onclick = "openModal();currentSlide(3)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Loss\4.jpg" onclick = "openModal();currentSlide(4)" class = "hover-shadow">
+            </div>
+        </div>
+
+        <!-- THE LIGHTBOX-->
+        <div id= "myModal" class = "modal">
+            <span class ="close cursor" onclick = "closeModal()">&times;</span>
+            <div class = "modal-content">
+                <div class = "mySlides">
+                    <div class = "numbertext">1/4</div>
+                    <img src = "..\Loss\1.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">2/4</div>
+                    <img src = "..\Loss\2.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">3/4</div>
+                    <img src = "..\Loss\3.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">4/4</div>
+                    <img src = "..\Loss\4.jpg" style="height: 80%;">
+                </div>
+                
+
+                <!-- NEXT/PREVIOUS CONTROLS-->
+
+                <a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+                <a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+
+                <!-- CAPTION CONTROLS-->
+                <div class = "caption-container">
+                    <p id = "caption">Hello</p>
+                </div>
+
+                <!-- THUMBNAIL CONTROLS-->
+
+                <div class = "column">
+                    <img class = "demo" src = "..\Loss\1.jpg" onclick = "currentSlide(1)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Loss\2.jpg" onclick = "currentSlide(2)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Loss\3.jpg" onclick = "currentSlide(3)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Loss\4.jpg" onclick = "currentSlide(4)" alt = "Loading">
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div><!-- ACCORDION STYLE MAIN PAGE (Surreal)-->
+    <button class="accordion">Surreal</button>
+    <div class = "panel">
+        <!--IMAGES USED TO OPEN THE LIGHTBOX OF MEMES-->
+        <div class = "row">
+            <div class="column">
+                <img src = "..\Surreal\1.jpg" onclick = "openModal();currentSlide(1)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Surreal\2.jpg" onclick = "openModal();currentSlide(2)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Surreal\3.jpg" onclick = "openModal();currentSlide(3)" class = "hover-shadow">
+            </div>
+            <div class = "column">
+                <img src = "..\Surreal\4.jpg" onclick = "openModal();currentSlide(4)" class = "hover-shadow">
+            </div>
+        </div>
+
+        <!-- THE LIGHTBOX-->
+        <div id= "myModal" class = "modal">
+            <span class ="close cursor" onclick = "closeModal()">&times;</span>
+            <div class = "modal-content">
+                <div class = "mySlides">
+                    <div class = "numbertext">1/4</div>
+                    <img src = "..\Surreal\1.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">2/4</div>
+                    <img src = "..\Surreal\2.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">3/4</div>
+                    <img src = "..\Surreal\3.jpg" style="height: 80%;">
+                </div>
+                <div class = "mySlides">
+                    <div class = "numbertext">4/4</div>
+                    <img src = "..\Surreal\4.jpg" style="height: 80%;">
+                </div>
+                
+
+                <!-- NEXT/PREVIOUS CONTROLS-->
+
+                <a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+                <a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+
+                <!-- CAPTION CONTROLS-->
+                <div class = "caption-container">
+                    <p id = "caption">Hello</p>
+                </div>
+
+                <!-- THUMBNAIL CONTROLS-->
+
+                <div class = "column">
+                    <img class = "demo" src = "..\Surreal\1.jpg" onclick = "currentSlide(1)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Surreal\2.jpg" onclick = "currentSlide(2)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Surreal\3.jpg" onclick = "currentSlide(3)" alt = "Loading">
+                </div>
+                <div class = "column">
+                    <img class = "demo" src = "..\Surreal\4.jpg" onclick = "currentSlide(4)" alt = "Loading">
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+
+        
+    </script>
+
+    <script>
+        // Open the Modal
+        function openModal() {
+          document.getElementById("myModal").style.display = "block";
+        }
+        
+        // Close the Modal
+        function closeModal() {
+          document.getElementById("myModal").style.display = "none";
+        }
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+
+
+</body>
+
+
+</html>
+

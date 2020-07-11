@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from memesahaab.views import Meme,Like
 
 # Create your views here.
 
@@ -14,7 +15,7 @@ def loginn(request):
             return redirect('/')
         else:
             messages.info(request, "Invalid credentials")
-            return redirect('login')
+            return redirect('/')
     else:
         return render(request, 'login.html')
 
@@ -46,7 +47,7 @@ def register(request):
             user.save()
             print("User created")
             messages.info(request,'User Created')
-            return redirect('login')
+            return redirect('/')
     else:
         
         return render(request, "register.html")
@@ -55,3 +56,26 @@ def register(request):
 def logoutt(request):
     auth.logout(request)
     return redirect('/')
+
+
+def home(request):
+
+    return render(request, 'Homepage.html')
+
+def Homepage(request):
+    memes = Meme.objects.all()
+    user = request.user
+    context = {
+        'memes' : memes,
+        'user' : user,
+    }
+    return render(request, 'index.html', context)
+
+def Contact(request):
+    return render(request, 'Contact.html')
+
+def AboutUs(request):
+    return render(request, 'AboutUs.html')
+
+def Bwahaha(request):
+    return render(request, 'Bwahaha.html')
