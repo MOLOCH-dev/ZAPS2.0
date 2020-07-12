@@ -24,7 +24,7 @@ MemeSaahab is a meme-journal website. It can be used between friend-groups with 
 
 ## Technology stack
 
-Tools and technologies that you learnt and used in the project.
+Tools and technologies that you learnt and used in the project:
 
 1. HTML
 2. CSS
