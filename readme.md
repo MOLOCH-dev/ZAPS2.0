@@ -18,47 +18,6 @@ MEMESAHAAB is a meme-journal website. It can be used between friend-groups with 
 
 * Use bullet points for any feature descriptions you may want to add
 
-```bash
-    Add appropriate code snippets here (4 spaces indent)
-```
-
-Don't forget to replace the link here with **_your own Github repository_** link.
-
-Along with this, add the link of the drive folder that contains the app APK/Screenshots/Screen Recordings. If you have hosted your project on the web, add that link as well.
-
-* GitHub repo link: [Link to repository](https://github.com/your-repo-link)
-* Drive link: [Drive link here](https://drive.google.com/)
-* Website link: [Website link here](www.google.com)
-
-
-# Project-name
-
-### Team name: your-team-name
-
-## Team members
-* Member-1 - Email
-* Member-2 - Email
-* Member-3 - Email
-* Member-4 - Email
-
-## Mentors
-* Mentor-1
-* Mentor-2 
-* Mentor-3 (Add if required)
-
-## Description
-Add your project description here. Your project description should cover how your website/app works. That way you can convey what your project is without the need for anyone to view the code. A more detailed readme in your project repository is encouraged, which can include build and use instructions etc.
-
-* Use bullet points for any feature descriptions you may want to add
-
-```bash
-    Add appropriate code snippets here (4 spaces indent)
-```
-
-
-
-Along with this, add the link of the drive folder that contains the app APK/Screenshots/Screen Recordings. If you have hosted your project on the web, add that link as well.
-
 * GitHub repo link: [Link to repository](https://github.com/MOLOCH-dev/ZAPS2.0)
 * Drive link: [Drive link here](https://drive.google.com/drive/folders/1ffdE_W2S8LjOrxG5fzDHayzsEZmGaYNA?usp=sharing)
 
