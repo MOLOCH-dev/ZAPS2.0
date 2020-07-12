@@ -4,9 +4,9 @@
 
 ## Team members
 * Anushree Sabnis - sabnisanushree@gmail.com
-* Sadhana Verma - sadhvarma
-* Pranav Pandit - Email
-* Zubair - Email
+* Sadhana Verma - sadhvarma123@gmail.com
+* Pranav Pandit - pgpandit88@gmail.com
+* Zubair - shaikhszubair1234@gmail.com
 
 ## Mentors
 * Saurav Kanegaonkar
@@ -14,7 +14,7 @@
 * Parth
 
 ## Description
-MEMESAHAAB is a meme-journal website. It can be used between friend-groups with similar meme tastes. It makes use of Django framework, postgresql for backend; HTML, CSS, and JavaScript for frontend.
+MemeSaahab is a meme-journal website. It can be used between friend-groups with similar meme tastes. It makes use of Django framework, postgresql for backend; HTML, CSS, and JavaScript for frontend.
 
 * Use bullet points for any feature descriptions you may want to add
 
@@ -70,11 +70,11 @@ To do this, input 'cd' and add your folder location. You can add the folder loca
 ```
 
 ## Applications
->MemeSahaab is a light-hearted meme-journaling website that aims to alleiviate some of the Lockdown-stress of all the meme-lovers out there.  
+>MemeSaahab is a light-hearted meme-journaling website that aims to alleiviate some of the Lockdown-stress of all the meme-lovers out there.  
 >It's a fun website that can be shared among friends with similar tastes in memes.  
 >Users can get in touch with their friends and like-minded people using our chatbox.  
 >Users can update their own meme-collection as well as check out the meme collections of others.  
->MemeSahaab makes you update your journal before viewing the memes present on it.  
+>MemeSaahab makes you update your journal before viewing the memes present on it.  
 
 ## Future scope
 >The project could be vastly improved by adding a reccommeder system, to highlight trending memes.  
