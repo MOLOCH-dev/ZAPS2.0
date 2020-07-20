@@ -7,16 +7,8 @@ from .forms import MemeForm, LossForm, SurrealForm, MememanForm
 def home(request):
 #first displayed page
 
-    return render(request, 'Home1.html')
+    return render(request, 'index.html')
 
-def Homepage(request):
-    memes = Meme.objects.all()
-    user = request.user
-    context = {
-        'memes' : memes,
-        'user' : user,
-    }
-    return render(request, 'index.html', context)
 
 def Contact(request):
     return render(request, 'Contact.html')
@@ -109,7 +101,7 @@ def like_post_mememan(request):
       #   return render(request, "Catg.html")
 
 def Home1(request):
-    return render(request, 'Home1.html')
+    return render(request, 'index.html')
 
 def meme_list(request):
     Cgloss_memes = Loss_Meme.objects.all()
