@@ -4,7 +4,6 @@ from .views import Homepage, Bwahaha, Contact, meme_list, upload_meme,loss_meme_
 app_name = 'memesahaab'
 urlpatterns = [
     path('', views.home, name = 'home'),
-    path('index.html', views.Homepage, name = 'Homepage'),
     path('Home1', views.Home1, name = 'Home1'),
     path('Bwahaha.html', views.Bwahaha, name = 'Bwahaha'),
     path('Contact.html', views.Contact, name = 'Contact'),
